@@ -1,0 +1,35 @@
+@namespace("com.cloudbeds.avro")
+protocol UserAddressService{
+
+	record AddressData{
+		long id = 0;
+		string firstAddress;
+		string secondAddress = "";
+		string city;
+		string state;
+		string zip;
+		string country;
+	}
+
+	record UserData{
+		long id = 0;
+		string firstName;
+		string lastName = "";
+		string email;
+		string password;
+		array<AddressData> addresses;
+	}
+
+	enum Status{
+		OK, NOT_PROCESSED, NOT_FOUND, UNKNOWN
+	}
+
+	record Response{
+		Status status;
+	    union {null, string} message;
+		union {null, UserData} body;
+    }
+
+	Response RetrieveInfo(long id);
+	Response Create(UserData userData);
+}

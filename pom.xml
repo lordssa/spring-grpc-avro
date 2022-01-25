@@ -1,0 +1,12 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.cloudbeds</groupId>
+    <artifactId>admin-person-parent</artifactId>
+    <packaging>pom</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>admin-person-parent</name>
+    <modules>
+        <module>admin-person-service</module>
+        <module>interface</module>
+    </modules>
+</project>
